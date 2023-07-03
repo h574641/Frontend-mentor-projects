@@ -1,32 +1,28 @@
 body {
     background-color: hsl(0, 0%, 94%);
+    font-family: Poppins;
 }
 .container {
     background-color: hsl(0, 0%, 100%);
     border-radius: 20px 20px 100px 20px;
     padding-left: 20px;
     padding-top: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 .top {
     display: flex;
-    font-size: 32px;
+    font-size: 28px;
 }
-
-.middle {
-    display:flex;
-}
-
-.bottom {
-    font-size: 32px;
-    font-weight: bold ;
-}
-img {
+.middle img {
     background-color: hsl(259, 100%, 65%);
 }
-img:hover {
+.middle img:hover {
     background-color: hsl(0, 0%, 8%);
 }
-span {
+.bottom {
+    font-size: 28px;
+    font-weight: bold ;
     color: hsl(259, 100%, 65%);
 }
 .attribution { 

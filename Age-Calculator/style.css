@@ -1,0 +1,37 @@
+body {
+    background-color: hsl(0, 0%, 94%);
+}
+.container {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px 20px 100px 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.top {
+    display: flex;
+    font-size: 32px;
+}
+
+.middle {
+    display:flex;
+}
+
+.bottom {
+    font-size: 32px;
+    font-weight: bold ;
+}
+img {
+    background-color: hsl(259, 100%, 65%);
+}
+img:hover {
+    background-color: hsl(0, 0%, 8%);
+}
+span {
+    color: hsl(259, 100%, 65%);
+}
+.attribution { 
+    font-size: 11px; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}

@@ -18,6 +18,8 @@ kalkulere alder (YEARS MONTHS DAYS)
 
 vise variabler i HTML-dokument
 
+styling av siden + mobilversjon
+
 */
 
 // Inputs:
@@ -27,13 +29,23 @@ const yearInput = document.getElementById("year");
 
 const button = document.querySelector("button");
 
+const date = new Date();
+const dateInput = new Date(yearInput,monthInput,dayInput);
+
+// Variabler:
 let day = 0;
 let month = 0;
 let year = 0;
+let validinput = true;
+
 
 // Metode for å kalkulere alder
 function calculate() {
-    console.log("CLICK!")
+    console.log("CLICK!");
+    console.log(date.getDate());
+    console.log(date.getMonth());
+    console.log(date.getFullYear());
+
     day = Number.parseInt(dayInput.value);
     month = Number.parseInt(monthInput.value);
     year = Number.parseInt(yearInput.value);

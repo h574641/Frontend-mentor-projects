@@ -38,7 +38,6 @@ let month = 0;
 let year = 0;
 let validinput = true;
 
-
 // Metode for å kalkulere alder
 function calculate() {
     console.log("CLICK!");
@@ -53,12 +52,22 @@ function calculate() {
     document.querySelector("[data-years]").textContent = year;
     document.querySelector("[data-months]").textContent = month;
     document.querySelector("[data-days]").textContent = day;
-
 }
 
 // Metode for å validere input
-function validateInput(input) {    
-}
+function validateInput(dateInput) {
+    if (day == 0 )
 
+    elseif (day < 1 || day > 31 {
+        return false;
+    }
+    else if (month < 1 || month > 12) {
+        return false;
+    }
+    else if (year > date.getFullYear()) {
+        return false;
+    }
+    else return true;
+}
 
 button.addEventListener('click', calculate);

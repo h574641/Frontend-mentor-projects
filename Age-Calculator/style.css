@@ -25,6 +25,7 @@ body {
     color:hsl(0, 0%, 8%)
 }
 .top span {
+    display:none;
     font-size: 12px;
     color:hsl(0, 100%, 67%);
 }

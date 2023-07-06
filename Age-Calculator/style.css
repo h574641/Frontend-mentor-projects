@@ -6,19 +6,23 @@ body {
 .container {
     background-color: hsl(0, 0%, 100%);
     border-radius: 20px 20px 100px 20px;
-    padding-left: 20px;
-    padding-top: 20px;
-    margin: 20px;
+    padding: 20px;
     max-width: 1440px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .top {
-    display: flex;
+    display:inline-flex;
     font-size: 12px;
+    margin: auto 20px;
 }
 .top input {
     max-width: 100px;
     height: 40px;
     border-radius: 10px;
+    font-weight: bold;
+    color:hsl(0, 0%, 8%)
 }
 .top span {
     font-size: 12px;
@@ -26,6 +30,9 @@ body {
 }
 .day .month .year {
     margin: 20px 20px 20px 20px;
+}
+.middle {
+    margin: auto 20px;
 }
 .middle button {
     border: none;
@@ -38,6 +45,7 @@ body {
     background-color: hsl(0, 0%, 8%);
 }
 .bottom {
+    margin: auto 20px;
     font-weight: bold;
     font-style: italic;
 }

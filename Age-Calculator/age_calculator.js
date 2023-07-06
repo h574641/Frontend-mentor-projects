@@ -5,35 +5,48 @@
 hente inputs (DAY MONTH YEAR) fra bruker
 
 validere inputs:
-- tom input
+- tom input/null
 - ugyldig input (over 31 day, 12 month, 2023 year)
 - ugyldig input (date in future)
 - ugyldig input (not valid date in calendar)
 
-kalkulere alder (DAYS MONTHS YEARS)
+returnere eventuelle feilmeldinger
 
-sende variabler til HTML
+vise feilmeldinger i HTML-dokument
 
-sende eventuelle feilmeldinger
+kalkulere alder (YEARS MONTHS DAYS)
+
+vise variabler i HTML-dokument
 
 */
 
 // Inputs:
-const day = document.getElementById("day");
-const month = document.getElementById("month");
-const year = document.getElementById("year");
+const dayInput = document.getElementById("day");
+const monthInput = document.getElementById("month");
+const yearInput = document.getElementById("year");
 
 const button = document.querySelector("button");
 
+let day = 0;
+let month = 0;
+let year = 0;
+
 // Metode for å kalkulere alder
 function calculate() {
-    let invalidInput = false;
-    validateInput(day, month, year);
+    console.log("CLICK!")
+    day = Number.parseInt(dayInput.value);
+    month = Number.parseInt(monthInput.value);
+    year = Number.parseInt(yearInput.value);
+
+    document.querySelector("[data-years]").textContent = year;
+    document.querySelector("[data-months]").textContent = month;
+    document.querySelector("[data-days]").textContent = day;
+
 }
 
 // Metode for å validere input
-function validateInput () {
-    
+function validateInput(input) {    
 }
+
 
 button.addEventListener('click', calculate);

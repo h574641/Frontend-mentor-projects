@@ -42,8 +42,8 @@ dateInput.setFullYear(Number.parseInt(yearInput.value));
 let validinput = true;
 
 // Metode for å kalkulere alder
+function calculate(date1, date2) {
 
-function calculate() {
     console.log("TODAY:");
     console.log(date.getDate());
     console.log(date.getMonth());
@@ -53,9 +53,16 @@ function calculate() {
     console.log(dateInput.getMonth());
     console.log(dateInput.getFullYear());
 
-    document.querySelector("[data-years]").textContent = date.getDate();
-    document.querySelector("[data-months]").textContent = date.getMonth();
-    document.querySelector("[data-days]").textContent = date.getFullYear();
+    let diff = Math.floor(date.getTime() - dateInput.getTime());
+
+    let days = Math.floor(diff/(1000 * 60 * 60 * 24));
+    let months = Math.floor(days/31);
+    let years = Math.floor(months/12);
+
+    document.querySelector("[data-years]").textContent = days.toString();
+    document.querySelector("[data-months]").textContent = months.toString();
+    document.querySelector("[data-days]").textContent = years.toString();
+
 }
 
 // Metode for å validere input
@@ -79,4 +86,6 @@ function validateInput(dateInput) {
     else return validinput;
 }
 
-button.addEventListener('click', calculate);
+
+
+button.addEventListener('click', calculate(date, dateInput));

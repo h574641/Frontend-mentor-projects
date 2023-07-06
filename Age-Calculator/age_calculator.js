@@ -23,51 +23,60 @@ styling av siden + mobilversjon
 */
 
 // Inputs:
+
 const dayInput = document.getElementById("day");
 const monthInput = document.getElementById("month");
 const yearInput = document.getElementById("year");
 
 const button = document.querySelector("button");
 
-const date = new Date();
-const dateInput = new Date(yearInput,monthInput,dayInput);
-
 // Variabler:
-let day = 0;
-let month = 0;
-let year = 0;
+
+const date = new Date();
+const dateInput = new Date();
+
+dateInput.setDate(Number.parseInt(dayInput.value));
+dateInput.setMonth(Number.parseInt(monthInput.value));
+dateInput.setFullYear(Number.parseInt(yearInput.value));
+
 let validinput = true;
 
 // Metode for å kalkulere alder
+
 function calculate() {
-    console.log("CLICK!");
+    console.log("TODAY:");
     console.log(date.getDate());
     console.log(date.getMonth());
     console.log(date.getFullYear());
+    console.log("INPUT:")
+    console.log(dateInput.getDate());
+    console.log(dateInput.getMonth());
+    console.log(dateInput.getFullYear());
 
-    day = Number.parseInt(dayInput.value);
-    month = Number.parseInt(monthInput.value);
-    year = Number.parseInt(yearInput.value);
-
-    document.querySelector("[data-years]").textContent = year;
-    document.querySelector("[data-months]").textContent = month;
-    document.querySelector("[data-days]").textContent = day;
+    document.querySelector("[data-years]").textContent = date.getDate();
+    document.querySelector("[data-months]").textContent = date.getMonth();
+    document.querySelector("[data-days]").textContent = date.getFullYear();
 }
 
 // Metode for å validere input
 function validateInput(dateInput) {
-    if (day == 0 )
+    let day = dateInput.getDate();
+    let month = dateInput.getMonth();
+    let year = dateInput.getFullYear();
 
-    elseif (day < 1 || day > 31 {
-        return false;
+    if (day < 1 || day > 31) {
+        validinput = false;
+        return validinput;
     }
     else if (month < 1 || month > 12) {
-        return false;
+        validinput = false;
+        return validinput;
     }
     else if (year > date.getFullYear()) {
-        return false;
+        validinput = false;
+        return validinput;
     }
-    else return true;
+    else return validinput;
 }
 
 button.addEventListener('click', calculate);
